@@ -22,7 +22,7 @@ function radarChart(selector, data, options, year) {
     roundStrokes: false, //If true, teh area and stroke of the blobs will follow a round path (cardinal-closed interpolation)
     color: d3.scaleOrdinal(d3.schemeCategory10), //Color function
     glow: false, //If true, will add a glow effect to the data
-  }
+  };
 
   // Populate cfg with options
   if (typeof options !== 'undefined') {
@@ -37,8 +37,8 @@ function radarChart(selector, data, options, year) {
   var maxInData = d3.max(data.dataPerYear[year], function(i) {
     return d3.max(i.map(function(o) {
       return o.value;
-    }))
-  })
+    }));
+  });
   var maxValue = Math.max(cfg.maxValue, Math.ceil(maxInData * 10) / 10);
   
   // Base variables
@@ -47,10 +47,10 @@ function radarChart(selector, data, options, year) {
   }));
   var numberOfAxis = allAxis.length; //Get the number of axis
   var angleSlice = Math.PI * 2 / numberOfAxis; //Width of each slice (in radians)
-  var outerRadius = Math.min(cfg.width / 2, cfg.height / 2) //Radius of the outermost circle
+  var outerRadius = Math.min(cfg.width / 2, cfg.height / 2); //Radius of the outermost circle
   /* Should also allow other formats */
   /* To refactor */
-  var format = d3.format('.0%') //Format values as percentages
+  var format = d3.format('.0%'); //Format values as percentages
   /* To refactor -- end */
 
   // Scale for the radius
@@ -330,7 +330,7 @@ function radarChart(selector, data, options, year) {
       tooltip.transition()
         .duration(200)
         .style('opacity', 0);
-    })
+    });
 
 
   /////////////////////////////////////////////////////////
@@ -395,7 +395,7 @@ function radarChart(selector, data, options, year) {
         })
         .attr('cy', function(d, i) {
           return rScale(d.value) * Math.sin(angleSlice*i - Math.PI/2);
-        })
+        });
 
       // Update tooltips
     var blobCircleWrapper = g.selectAll('.radarCircleWrapper')
@@ -426,13 +426,13 @@ function radarChart(selector, data, options, year) {
 
   // Automatic year update
   var yearSelectors = document.querySelectorAll('.btn-year-selector');
-  var i = 1;
-  var selectYearInterval = setInterval(selectYear, 2500, i);
+  var index = 1;
+  var selectYearInterval = setInterval(selectYear, 2500, index);
 
   function selectYear() {
-    if (i < yearSelectors.length) {
-      yearSelectors[i].click(event, true);
-      ++i;
+    if (index < yearSelectors.length) {
+      yearSelectors[index].click(event, true);
+      ++index;
     } else {
       clearInterval(selectYearInterval);
     }

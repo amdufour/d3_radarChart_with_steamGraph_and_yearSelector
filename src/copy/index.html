@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Radar Chart</title>
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
+</head>
+<body>
+    <div class="container">
+        <div id="year-selector">
+            <ul id="year-selector-list"></ul>
+        </div>
+        <div id="radar-chart"></div>
+        <h2>Evolution over time</h2>
+        <div id="streamgraph-container" class="row">
+            <div class="streamgraph col-12 col-md-6">
+                <h3>Men</h3>
+                <div id="streamgraph-men"></div>
+            </div>
+            <div class="streamgraph col-12 col-md-6">
+                <h3>Women</h3>
+                <div id="streamgraph-women"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="js/data.min.js"></script>
+    <script src="js/radarChart.min.js"></script>
+    <script src="js/streamgraph.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="js/main.polyfills.min.js"></script>
+</body>
+</html>
