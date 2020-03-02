@@ -1,0 +1,82 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #242424;
+  fill: #242424;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  cursor: default;
+}
+
+.legend {
+  font-family: 'Raleway', sans-serif;
+  fill: #333333;
+}
+
+.tooltip {
+  fill: #333333;
+}
+
+/* Year selector */
+#year-selector {
+  margin: 50px 0;
+}
+#year-selector-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-left: 0;
+  width: 100%;
+  max-width: 700px;
+  list-style: none;
+  border-top: 4px solid #d7dcdf;
+}
+#year-selector-list li {
+  position: relative;
+}
+#year-selector-list li:first-of-type::before,
+#year-selector-list li:last-of-type::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  width: 10px;
+  height: 4px;
+  background: #fff;
+}
+#year-selector-list li:first-of-type::before {
+  left: 0;
+}
+#year-selector-list li:last-of-type::before {
+  right: 0;
+}
+#year-selector-list li button {
+  position: relative;
+  -webkit-appearance: none;
+  padding: 20px 0 0;
+  border: none;
+  font-size: 12px;
+  color: #242424;
+  cursor: pointer;
+}
+#year-selector-list li button::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #d7dcdf;
+  border-radius: 50%;
+  transition: all 0.1s ease-out;
+}
+#year-selector-list li button.active::after,
+#year-selector-list li button:hover::after,
+#year-selector-list li button:focus::after {
+  background: #3A92B5;
+  transition: all 0.1s ease-in;
+}
+#year-selector-list li button.active {
+  cursor: default;
+}
