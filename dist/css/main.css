@@ -1185,6 +1185,11 @@ button {
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
 
+/* line 1, src/sass/components/_streamgraph.scss */
+#streamgraph-container {
+  margin-bottom: 200px;
+}
+
 /* line 1, src/sass/components/_yearSelector.scss */
 #year-selector {
   margin: 50px 0;
